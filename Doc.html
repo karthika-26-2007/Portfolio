@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL PORTFOLIO</title>
+    <link rel="stylesheet" href="Doc.css">
+</head>
+<body>
+
+    <header>
+        <h1>DIGITAL PORTFOLIO</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="profile-container">
+            <img id="profile-pic" src="https://i.ibb.co/4RzKPsjJ/IMG-20241002-171127.jpg" alt="IMG-20241002-171127" border="0"></a>" alt="Passport Photo">
+        </div>
+        <p>I am S.Karthika, a passionate student. Welcome to my portfolio.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p>I am studying BCA second year in Mother gnanamma women's college of arts and science,Varadaranjanpet.</p>
+    </section>
+        <section id="certificates">
+        <h2>Certificates</h2>
+        <ul>
+        <li>Foundation of coding with python.</li>
+        <li>Front end development(HTML,CSS etc..)</li>
+        <li>Microsoft 360 training(word,excel,etc....).</li>
+        </ul>
+
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <li>Project using Html and css.</li>
+            <li>Presentation on ecosystem.</li>
+        </ul>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <input type="file" id="upload" />
+<a id="download" style="display: none;">Download File</a>
+
+<script>
+    document.getElementById('upload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            const downloadLink = document.getElementById('download');
+            downloadLink.href = url;
+            downloadLink.download = file.name;
+            downloadLink.textContent = "Download " + file.name;
+            downloadLink.style.display = "block";
+        }
+    });
+</script>
+        <a href="resume.pdf" download class="download-btn">Download My Resume (PDF)</a>
+    </section>
+
+    <script>
+        document.getElementById('upload-photo').addEventListener('change', function(event) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('profile-pic').src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+
+</body>
+</html>
